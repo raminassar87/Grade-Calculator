@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">معدلي الجامعي</string>
+    <string name="select_mode">اختر نظام العلامات :</string>
+    <string name="header_title">نظام حساب العلامات</string>
+    <string name="summary">عزيزي الطالب,تستطيع عن طريق هذا البرنامج حساب المعدل الجامعي الفصلي و التراكمي بشكل دقيق و سهل.</string>
+    <string name="start">احسب معدلك</string>
+    <string name="back">رجوع</string>
+    <string name="start_new_score">احسب معدل جديد</string>
+    <string name="oldTotalScoreTxt">المعدل التراكمي السابق</string>
+    <string name="oldTotalNoOfHoursTxt">الساعات المقطوعة السابقة</string>
+    <string name="noOfHoursHeaderTxt">عدد ساعات المادة</string>
+    <string name="newMarkHeaderTxt">العلامة الجديدة</string>
+    <string name="oldMarkHeaderTxt">العلامة القديمة</string>
+    <string name="suggestions">للاقتراحات يرجى مراسلتنا على البريد الإلكتروني</string>
+    <string name="percent_not_done">لم يتم تطبيق النظام المؤوي بعد</string>
+    <string name="suggestionsMail">javawy@gmail.com</string>
+    <string name="hello_world">Hello World</string>
+    <string name="noOfHours">عدد الساعات</string>
+    <string name="mark">العلامة</string>
+    <string name="current_hours">ساعات الفصل :</string>
+    <string name="current_score">المعدل الفصلي المتوقع :</string>
+    <string name="rating">التقدير :</string>
+    <string name="total_hours">الساعات التراكمية :</string>
+    <string name="total_grade">المعدل التراكمي المتوقع :</string>
+    <string name="alreadyTakenTxt">معادة</string>
+    <string name="share_result">ارسال العلامة</string>
+    <string name="share_header">لقد قمت بحساب معدلي التراكمي و كان كالتالي :</string>
+
+    <string name="generalErrorTitleMsg">خطأ في إدخال البيانات</string>
+    <string name="errorMsg">حدث خطأ غير متوقع اثناء حساب المعدل</string>
+    <string name="marksNotExistsErrorMsg">يجب ادخال على الأقل علامة واحدة لحساب المعدل</string>
+    <string name="oldTotalScoreMandatoryErrorMsg">يجب إدخال المعدل التراكمي السابق</string>
+    <string name="oldTotalScoreErrorMsg">ممنوع ادخال رقم أكبر من 4 في المعدل التراكمي السابق</string>
+    <string name="oldTotalNoOfHoursMandatoryErrorMsg">يجب إدخال عدد الساعات السابق</string>
+    <string name="oldTotalNoOfHoursErrorMsg">ممنوع ادخال رقم أكبر من 250 لعدد الساعات السابق</string>
+    <string name="oldMarkMandatoryErrorMsg">يجب إدخال العلامة القديمة في حالة كانت المادة معادة</string>
+    <string name="oldMarkMoreThanExistsErrorMsg">مجموع العلامات القديمة يجب أن لا يتعدى عدد الساعات المقطوعة السابقة</string>
+    <string name="markMandatoryErrorMsg">يجب إدخال العلامة للمادة المدخل ساعاتها</string>
+
+    <string-array name="spinner_values">
+        <item>النظام المئوي</item>
+        <item>النظام الرباعي GPA</item>
+    </string-array>
+
+    <string-array name="no_of_hours_values">
+        <item>عدد الساعات</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="mark_values">
+        <item>العلامة</item>
+        <item>0</item>
+        <item>1.5</item>
+        <item>1.75</item>
+        <item>2</item>
+        <item>2.25</item>
+        <item>2.5</item>
+        <item>2.75</item>
+        <item>3</item>
+        <item>3.25</item>
+        <item>3.5</item>
+        <item>3.75</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="title_activity_add_mob">AddMobActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+    This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+    For more information, see https://support.google.com/admob/answer/3052638
+
+ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+
+<!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3517273960705854/3161204729</string>
+    <string name="demo_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="title_activity_my">MyActivity</string>
+    <string name="title_activity_ad_view_acttivity">AdViewActtivity</string>
+    <string name="title_activity_marks">MarksActivity</string>
+
+</resources>

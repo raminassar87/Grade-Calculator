@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="javawy.gpagradecalculator.MarksActtivity" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="javawy.gpagradecalculator.MarksActtivity"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <EditText
+                android:id="@+id/oldTotalScoreValue"
+                android:layout_width="200dip"
+                android:gravity="center"
+                android:maxLength="4"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/oldTotalScoreTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/oldTotalScoreTxt"/>
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <EditText
+                android:id="@+id/oldTotalNoOfHoursValue"
+                android:layout_width="200dp"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="3"
+                android:layout_weight="1"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/oldTotalNoOfHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/oldTotalNoOfHoursTxt"/>
+
+        </RelativeLayout>
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="ca-app-pub-3517273960705854/3161204729">
+        </com.google.android.gms.ads.AdView>
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3,4">
+
+            <TableRow
+                android:layout_height="150dp"
+                android:background="@color/colorPrimary">
+                <TextView
+                    android:text="@string/oldMarkHeaderTxt"
+                    android:gravity="center"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:padding="3dip" />
+                <TextView
+                    android:text="@string/alreadyTakenTxt"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="@string/newMarkHeaderTxt"
+                    android:padding="0dip"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="@string/noOfHoursHeaderTxt"
+                    android:padding="0dip"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark1"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark1"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours1"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark2"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="enableOldScore"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark2"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours2"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark3"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="enableOldScore"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark3"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours3"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark4"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark4"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours4"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark5"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark5"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours5"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark6"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark6"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours6"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark7"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark7"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours7"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark8"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark8"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours8"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark9"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark9"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours9"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+
+
+            <TableRow>
+                <Spinner
+                    android:id="@+id/oldMark10"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+
+                <CheckBox android:id="@+id/oldMarkExists10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text=""/>
+                <Spinner
+                    android:id="@+id/newMark10"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/mark_values" />
+                <Spinner
+                    android:id="@+id/noOfHours10"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:entries="@array/no_of_hours_values" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="calculateScore"
+            android:text="@string/start" />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:textSize="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:text=""/>
+    </LinearLayout>
+</ScrollView>
