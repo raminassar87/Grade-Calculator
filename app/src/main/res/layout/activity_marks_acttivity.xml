@@ -10,64 +10,10 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
         tools:context="javawy.gpagradecalculator.MarksActtivity"
         android:orientation="vertical">
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin">
-
-            <EditText
-                android:id="@+id/oldTotalScoreValue"
-                android:layout_width="200dip"
-                android:gravity="center"
-                android:maxLength="4"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0" />
-
-            <TextView
-                android:id="@+id/oldTotalScoreTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="@string/oldTotalScoreTxt"/>
-        </RelativeLayout>
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin">
-
-            <EditText
-                android:id="@+id/oldTotalNoOfHoursValue"
-                android:layout_width="200dp"
-                android:layout_alignParentLeft="true"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:inputType="number"
-                android:maxLength="3"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <TextView
-                android:id="@+id/oldTotalNoOfHours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="@string/oldTotalNoOfHoursTxt"/>
-
-        </RelativeLayout>
 
         <com.google.android.gms.ads.AdView
             xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -305,88 +251,63 @@
                     android:entries="@array/no_of_hours_values" />
             </TableRow>
 
-            <TableRow>
-                <Spinner
-                    android:id="@+id/oldMark8"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
-
-                <CheckBox android:id="@+id/oldMarkExists8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text=""/>
-                <Spinner
-                    android:id="@+id/newMark8"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
-                <Spinner
-                    android:id="@+id/noOfHours8"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/no_of_hours_values" />
-            </TableRow>
-
-            <TableRow>
-                <Spinner
-                    android:id="@+id/oldMark9"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
-
-                <CheckBox android:id="@+id/oldMarkExists9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text=""/>
-                <Spinner
-                    android:id="@+id/newMark9"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
-                <Spinner
-                    android:id="@+id/noOfHours9"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/no_of_hours_values" />
-            </TableRow>
-
-
-            <TableRow>
-                <Spinner
-                    android:id="@+id/oldMark10"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
-
-                <CheckBox android:id="@+id/oldMarkExists10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text=""/>
-                <Spinner
-                    android:id="@+id/newMark10"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
-                <Spinner
-                    android:id="@+id/noOfHours10"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_gravity="right"
-                    android:entries="@array/no_of_hours_values" />
-            </TableRow>
         </TableLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <EditText
+                android:id="@+id/oldTotalScoreValue"
+                android:layout_width="200dip"
+                android:gravity="center"
+                android:maxLength="4"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/oldTotalScoreTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/oldTotalScoreTxt"/>
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <EditText
+                android:id="@+id/oldTotalNoOfHoursValue"
+                android:layout_width="200dp"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="3"
+                android:layout_weight="1"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/oldTotalNoOfHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/oldTotalNoOfHoursTxt"/>
+
+        </RelativeLayout>
 
         <Button
             android:layout_width="wrap_content"

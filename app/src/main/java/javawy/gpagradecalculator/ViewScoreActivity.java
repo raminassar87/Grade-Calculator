@@ -37,11 +37,11 @@ public class ViewScoreActivity extends AppCompatActivity {
 
         final StringBuffer shareTextObj = new StringBuffer("");
         shareTextObj.append(getString(R.string.share_header)).append("\n");
-        shareTextObj.append(getString(R.string.current_hours)).append(" : ").append(intent.getStringExtra("currentHoursSum")).append("\n");
-        shareTextObj.append(getString(R.string.current_score)).append(" : ").append(intent.getStringExtra("currentAverage")).append("\n");
-        shareTextObj.append(getString(R.string.total_hours)).append(" : ").append(intent.getStringExtra("finalHoursSum")).append("\n");
-        shareTextObj.append(getString(R.string.total_grade)).append(" : ").append(intent.getStringExtra("finalAverage")).append("\n");
-        shareTextObj.append(getString(R.string.rating)).append(" : ").append(rating).append("\n");
+        shareTextObj.append(getString(R.string.current_hours)).append(" ").append(intent.getStringExtra("currentHoursSum")).append("\n");
+        shareTextObj.append(getString(R.string.current_score)).append(" ").append(intent.getStringExtra("currentAverage")).append("\n");
+        shareTextObj.append(getString(R.string.total_hours)).append(" ").append(intent.getStringExtra("finalHoursSum")).append("\n");
+        shareTextObj.append(getString(R.string.total_grade)).append(" ").append(intent.getStringExtra("finalAverage")).append("\n");
+        shareTextObj.append(getString(R.string.rating)).append(" ").append(rating).append("\n");
 
         Button shareResult = (Button)findViewById(R.id.shareResult);
         shareResult.setOnClickListener(new View.OnClickListener() {

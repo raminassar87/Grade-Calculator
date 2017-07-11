@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">معدلي الجامعي</string>
+    <string name="app_name">معدلي الجامعي - GPA</string>
     <string name="select_mode">اختر نظام العلامات :</string>
     <string name="header_title">نظام حساب العلامات</string>
     <string name="summary">عزيزي الطالب,تستطيع عن طريق هذا البرنامج حساب المعدل الجامعي الفصلي و التراكمي بشكل دقيق و سهل.</string>
@@ -13,7 +13,7 @@
     <string name="oldMarkHeaderTxt">العلامة القديمة</string>
     <string name="suggestions">للاقتراحات يرجى مراسلتنا على البريد الإلكتروني</string>
     <string name="percent_not_done">لم يتم تطبيق النظام المؤوي بعد</string>
-    <string name="suggestionsMail">javawy@gmail.com</string>
+    <string name="suggestionsMail">javawy87@gmail.com</string>
     <string name="hello_world">Hello World</string>
     <string name="noOfHours">عدد الساعات</string>
     <string name="mark">العلامة</string>

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 /**
- * Marks Acttivity
+ * Marks Activity
  *
  * @author Rami Nassar
  */
@@ -114,27 +114,6 @@ public class MarksActtivity extends AppCompatActivity {
                 enableOldScore(7);
             }
         });
-        checkBox = (CheckBox) findViewById(R.id.oldMarkExists8);
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enableOldScore(8);
-            }
-        });
-        checkBox = (CheckBox) findViewById(R.id.oldMarkExists9);
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enableOldScore(9);
-            }
-        });
-        checkBox = (CheckBox) findViewById(R.id.oldMarkExists10);
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enableOldScore(10);
-            }
-        });
     }
 
     /**
@@ -142,7 +121,7 @@ public class MarksActtivity extends AppCompatActivity {
      */
     private void disableOldMarks() {
 
-        for(int index = 1; index<=10 ;index++) {
+        for(int index = 1; index<=7 ;index++) {
             enableOldScore(index);
         }
     }
@@ -171,15 +150,6 @@ public class MarksActtivity extends AppCompatActivity {
         spinner.setEnabled(false);
 
         spinner = (Spinner) findViewById(R.id.newMark7);
-        spinner.setEnabled(false);
-
-        spinner = (Spinner) findViewById(R.id.newMark8);
-        spinner.setEnabled(false);
-
-        spinner = (Spinner) findViewById(R.id.newMark9);
-        spinner.setEnabled(false);
-
-        spinner = (Spinner) findViewById(R.id.newMark10);
         spinner.setEnabled(false);
     }
 
@@ -277,45 +247,6 @@ public class MarksActtivity extends AppCompatActivity {
                 enableScore(0,7);
             }
         });
-
-        noOfHours = (Spinner) findViewById(R.id.noOfHours8);
-        noOfHours.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                enableScore(position,8);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                enableScore(0,8);
-            }
-        });
-
-        noOfHours = (Spinner) findViewById(R.id.noOfHours9);
-        noOfHours.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                enableScore(position,9);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                enableScore(0,9);
-            }
-        });
-
-        noOfHours = (Spinner) findViewById(R.id.noOfHours10);
-        noOfHours.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                enableScore(position,10);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                enableScore(0,10);
-            }
-        });
     }
 
     /**
@@ -347,15 +278,6 @@ public class MarksActtivity extends AppCompatActivity {
                 break;
             case 7:
                 newMark = (Spinner) findViewById(R.id.newMark7);
-                break;
-            case 8:
-                newMark = (Spinner) findViewById(R.id.newMark8);
-                break;
-            case 9:
-                newMark = (Spinner) findViewById(R.id.newMark9);
-                break;
-            case 10:
-                newMark = (Spinner) findViewById(R.id.newMark10);
                 break;
         }
 
@@ -402,18 +324,6 @@ public class MarksActtivity extends AppCompatActivity {
             case 7:
                 checkBox = (CheckBox) findViewById(R.id.oldMarkExists7);
                 spinner = (Spinner) findViewById(R.id.oldMark7);
-                break;
-            case 8:
-                checkBox = (CheckBox) findViewById(R.id.oldMarkExists8);
-                spinner = (Spinner) findViewById(R.id.oldMark8);
-                break;
-            case 9:
-                checkBox = (CheckBox) findViewById(R.id.oldMarkExists9);
-                spinner = (Spinner) findViewById(R.id.oldMark9);
-                break;
-            case 10:
-                checkBox = (CheckBox) findViewById(R.id.oldMarkExists10);
-                spinner = (Spinner) findViewById(R.id.oldMark10);
                 break;
         }
 
@@ -476,24 +386,6 @@ public class MarksActtivity extends AppCompatActivity {
         noOfHours = (Spinner) findViewById(R.id.noOfHours7);
         if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
             mark = (Spinner) findViewById(R.id.newMark7);
-            grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
-        }
-
-        noOfHours = (Spinner) findViewById(R.id.noOfHours8);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
-            mark = (Spinner) findViewById(R.id.newMark8);
-            grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
-        }
-
-        noOfHours = (Spinner) findViewById(R.id.noOfHours9);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
-            mark = (Spinner) findViewById(R.id.newMark9);
-            grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
-        }
-
-        noOfHours = (Spinner) findViewById(R.id.noOfHours10);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
-            mark = (Spinner) findViewById(R.id.newMark10);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
@@ -568,31 +460,6 @@ public class MarksActtivity extends AppCompatActivity {
         if(checkBox.isChecked()) {
             oldGrades.add(new GradeBean(Double.valueOf(oldMark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
-
-        checkBox = (CheckBox) findViewById(R.id.oldMarkExists8);
-        oldMark = (Spinner) findViewById(R.id.oldMark8);
-        noOfHours = (Spinner) findViewById(R.id.noOfHours8);
-
-        if(checkBox.isChecked()) {
-            oldGrades.add(new GradeBean(Double.valueOf(oldMark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
-        }
-
-        checkBox = (CheckBox) findViewById(R.id.oldMarkExists9);
-        oldMark = (Spinner) findViewById(R.id.oldMark9);
-        noOfHours = (Spinner) findViewById(R.id.noOfHours9);
-
-        if(checkBox.isChecked()) {
-            oldGrades.add(new GradeBean(Double.valueOf(oldMark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
-        }
-
-        checkBox = (CheckBox) findViewById(R.id.oldMarkExists10);
-        oldMark = (Spinner) findViewById(R.id.oldMark10);
-        noOfHours = (Spinner) findViewById(R.id.noOfHours10);
-
-        if(checkBox.isChecked()) {
-            oldGrades.add(new GradeBean(Double.valueOf(oldMark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
-        }
-
         return oldGrades;
     }
 
@@ -651,7 +518,7 @@ public class MarksActtivity extends AppCompatActivity {
      */
     private boolean validateMarks() {
         boolean isValid = false;
-        for(int index = 1; index<=10 ;index++) {
+        for(int index = 1; index<=7 ;index++) {
             isValid = validateMarks(index);
             if(!isValid) {
                 return false;
@@ -700,18 +567,6 @@ public class MarksActtivity extends AppCompatActivity {
                 noOfHours = (Spinner) findViewById(R.id.noOfHours7);
                 mark = (Spinner) findViewById(R.id.newMark7);
                 break;
-            case 8:
-                noOfHours = (Spinner) findViewById(R.id.noOfHours8);
-                mark = (Spinner) findViewById(R.id.newMark8);
-                break;
-            case 9:
-                noOfHours = (Spinner) findViewById(R.id.noOfHours9);
-                mark = (Spinner) findViewById(R.id.newMark9);
-                break;
-            case 10:
-                noOfHours = (Spinner) findViewById(R.id.noOfHours10);
-                mark = (Spinner) findViewById(R.id.newMark10);
-                break;
         }
 
         if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
@@ -731,7 +586,7 @@ public class MarksActtivity extends AppCompatActivity {
      */
     private boolean validateOldMarks() {
         boolean isValid = false;
-        for(int index = 1; index<=10 ;index++) {
+        for(int index = 1; index<=7 ;index++) {
             isValid = validateOldMarks(index);
             if(!isValid) {
                 return false;
@@ -779,18 +634,6 @@ public class MarksActtivity extends AppCompatActivity {
             case 7:
                 checkBox = (CheckBox) findViewById(R.id.oldMarkExists7);
                 spinner = (Spinner) findViewById(R.id.oldMark7);
-                break;
-            case 8:
-                checkBox = (CheckBox) findViewById(R.id.oldMarkExists8);
-                spinner = (Spinner) findViewById(R.id.oldMark8);
-                break;
-            case 9:
-                checkBox = (CheckBox) findViewById(R.id.oldMarkExists9);
-                spinner = (Spinner) findViewById(R.id.oldMark9);
-                break;
-            case 10:
-                checkBox = (CheckBox) findViewById(R.id.oldMarkExists10);
-                spinner = (Spinner) findViewById(R.id.oldMark10);
                 break;
         }
 
