@@ -1,18 +1,39 @@
 package javawy.gpagradecalculator;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
+import com.google.android.gms.ads.InterstitialAd;
+/**
+ * View Score Activity
+ *
+ * @author : Rami Nassar
+ */
 public class ViewScoreActivity extends AppCompatActivity {
-    private AdView mAdView;
 
+    /*
+     * Fields
+     */
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
+
+    /*
+     * Methods
+     */
+
+    /**
+     * On Create
+     *
+     * @param savedInstanceState : Saved Instance State
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +75,26 @@ public class ViewScoreActivity extends AppCompatActivity {
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        // load Interstitial Ad
+        loadInterstitialAd();
+
+        // Show Interstitial Ad
+        showInterstitialAd();
+    }
+
+    /**
+     * Show Interstitial Ad
+     */
+    private void showInterstitialAd() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+            }
+        }, 2000);
     }
 
     /**
@@ -107,13 +148,32 @@ public class ViewScoreActivity extends AppCompatActivity {
     private void shareResult(String shareBody) {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "معدلي التراكمي");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        startActivity(Intent.createChooser(sharingIntent, "معدلي التراكمي"));
+    }
 
-//        Intent intent = new Intent(Intent.ACTION_SEND);
-//        intent.setType("text/plain");
-//        intent.putExtra(Intent.EXTRA_TEXT, text);
-//        shareActionProvider.setShareIntent(intent);
+    /**
+     * load Interstitial Ad
+     *
+     * @return Interstitial Ad
+     */
+    private void loadInterstitialAd() {
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {}
+
+            @Override
+            public void onAdClosed() {}
+        });
+        AdRequest adRequest = new AdRequest.Builder()
+                .setRequestAgent("android_studio:ad_template").build();
+        mInterstitialAd.loadAd(adRequest);
     }
 }
