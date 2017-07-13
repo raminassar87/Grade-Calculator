@@ -346,45 +346,57 @@ public class MarksActtivity extends AppCompatActivity {
         Spinner mark = null;
 
         Spinner noOfHours = (Spinner) findViewById(R.id.noOfHours1);
+        int position = noOfHours.getSelectedItemPosition();
 
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark1);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
         noOfHours = (Spinner) findViewById(R.id.noOfHours2);
+        position = noOfHours.getSelectedItemPosition();
 
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark2);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
         noOfHours = (Spinner) findViewById(R.id.noOfHours3);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        position = noOfHours.getSelectedItemPosition();
+
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark3);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
         noOfHours = (Spinner) findViewById(R.id.noOfHours4);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        position = noOfHours.getSelectedItemPosition();
+
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark4);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
         noOfHours = (Spinner) findViewById(R.id.noOfHours5);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        position = noOfHours.getSelectedItemPosition();
+
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark5);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
         noOfHours = (Spinner) findViewById(R.id.noOfHours6);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        position = noOfHours.getSelectedItemPosition();
+
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark6);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
 
         noOfHours = (Spinner) findViewById(R.id.noOfHours7);
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
+        position = noOfHours.getSelectedItemPosition();
+
+        if(position != 0 ) {
             mark = (Spinner) findViewById(R.id.newMark7);
             grades.add(new GradeBean(Double.valueOf(mark.getSelectedItem().toString()),Integer.valueOf(noOfHours.getSelectedItem().toString())));
         }
@@ -569,8 +581,11 @@ public class MarksActtivity extends AppCompatActivity {
                 break;
         }
 
-        if(!noOfHours.getSelectedItem().toString().equals(getString(R.string.noOfHours))) {
-            if(mark.getSelectedItem().toString().equals(getString(R.string.mark))) {
+        int noOfHoursPosition = noOfHours.getSelectedItemPosition();
+        int markPosition = mark.getSelectedItemPosition();
+
+        if(noOfHoursPosition != 0 ) {
+            if(markPosition == 0) {
                 alert(getString(R.string.generalErrorTitleMsg),getString(R.string.markMandatoryErrorMsg));
                 return false;
             }
@@ -637,8 +652,10 @@ public class MarksActtivity extends AppCompatActivity {
                 break;
         }
 
+        int markPosition = spinner.getSelectedItemPosition();
+
         if(checkBox.isChecked()) {
-            if(spinner.getSelectedItem().toString().equals(getString(R.string.mark))) {
+            if(markPosition == 0 ) {
                 alert(getString(R.string.generalErrorTitleMsg),getString(R.string.oldMarkMandatoryErrorMsg));
                 return false;
             }
