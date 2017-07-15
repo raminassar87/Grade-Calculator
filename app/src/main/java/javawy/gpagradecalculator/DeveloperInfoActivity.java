@@ -10,14 +10,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class DeveloperInfoActivity extends AppCompatActivity {
+
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_info);
+
+        loadPageAdd();
     }
 
+    /**
+     * Load Page Add
+     */
+    private void loadPageAdd() {
+        mAdView = (AdView) findViewById(R.id.adViewMainDevInfo);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

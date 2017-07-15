@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         loadPageAdd();
     }
 
+    /**
+     * Load Page Add
+     */
     private void loadPageAdd() {
         mAdView = (AdView) findViewById(R.id.adViewMain);
         AdRequest adRequest = new AdRequest.Builder().build();
