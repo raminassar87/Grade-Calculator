@@ -720,7 +720,7 @@ public class MarksActtivity extends AppCompatActivity {
             // Caclulate Average...
             Map<String, Number> results = AverageCalculator.calculateAverage(grades, oldGrades, oldAverage, oldHours);
 
-            NumberFormat formatter = new DecimalFormat("#0.00");
+            NumberFormat formatter = new DecimalFormat("#0.0000");
 
             Double finalAverageSum = (Double) results.get("finalAverageSum");
             Integer finalHoursSum = (Integer) results.get("finalHoursSum");

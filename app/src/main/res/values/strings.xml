@@ -10,7 +10,7 @@
     <string name="oldTotalScoreTxt">المعدل التراكمي السابق</string>
     <string name="oldTotalNoOfHoursTxt">الساعات المقطوعة السابقة</string>
     <string name="noOfHoursHeaderTxt">عدد ساعات المادة</string>
-    <string name="newMarkHeaderTxt">العلامة الجديدة</string>
+    <string name="newMarkHeaderTxt">العلامة</string>
     <string name="oldMarkHeaderTxt">العلامة القديمة</string>
     <string name="suggestions">للاقتراحات يرجى مراسلتنا على البريد الإلكتروني</string>
     <string name="percent_not_done">لم يتم تطبيق النظام المؤوي بعد</string>
@@ -26,6 +26,7 @@
     <string name="total_grade">المعدل التراكمي المتوقع :</string>
     <string name="alreadyTakenTxt">معادة</string>
     <string name="share_result">ارسال العلامة</string>
+    <string name="first_semester_message">اذا كان هذا هو الفصل الأول لك فيجب ابقاء القيم التالية بقيمة صفر</string>
     <string name="share_header">لقد قمت بحساب معدلي التراكمي و كان كالتالي :</string>
 
     <string name="generalErrorTitleMsg">خطأ في إدخال البيانات</string>
@@ -45,7 +46,7 @@
     </string-array>
 
     <string-array name="no_of_hours_values">
-        <item>---</item>
+        <item></item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -54,19 +55,19 @@
     </string-array>
 
     <string-array name="mark_values">
-        <item>---</item>
-        <item>0</item>
-        <item>1.5</item>
-        <item>1.75</item>
-        <item>2</item>
-        <item>2.25</item>
-        <item>2.5</item>
-        <item>2.75</item>
-        <item>3</item>
-        <item>3.25</item>
-        <item>3.5</item>
-        <item>3.75</item>
+        <item></item>
         <item>4</item>
+        <item>3.75</item>
+        <item>3.5</item>
+        <item>3.25</item>
+        <item>3</item>
+        <item>2.75</item>
+        <item>2.5</item>
+        <item>2.25</item>
+        <item>2</item>
+        <item>1.75</item>
+        <item>1.5</item>
+        <item>0</item>
     </string-array>
 
     <string name="title_activity_add_mob">AddMobActivity</string>
