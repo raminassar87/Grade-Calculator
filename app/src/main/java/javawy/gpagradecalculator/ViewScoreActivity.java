@@ -1,6 +1,7 @@
 package javawy.gpagradecalculator;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -203,6 +204,10 @@ public class ViewScoreActivity extends AppCompatActivity {
         } else if (id == R.id.action_go_to_home) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            return true;
+        } else if (id == R.id.action_rate_this_app) {
+            String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
             return true;
         }
 
