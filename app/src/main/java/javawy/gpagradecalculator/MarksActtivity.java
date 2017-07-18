@@ -24,6 +24,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 /**
  * Marks Activity
@@ -721,7 +722,9 @@ public class MarksActtivity extends AppCompatActivity {
             // Caclulate Average...
             Map<String, Number> results = AverageCalculator.calculateAverage(grades, oldGrades, oldAverage, oldHours);
 
-            NumberFormat formatter = new DecimalFormat("#0.0000");
+            NumberFormat formatter = NumberFormat.getInstance(Locale.ENGLISH);
+            formatter.setMaximumFractionDigits(4);
+            formatter.setMinimumFractionDigits(4);
 
             Double finalAverageSum = (Double) results.get("finalAverageSum");
             Integer finalHoursSum = (Integer) results.get("finalHoursSum");
@@ -772,6 +775,9 @@ public class MarksActtivity extends AppCompatActivity {
         } else if (id == R.id.action_rate_this_app) {
             String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
+            return true;
+        } else if (id == R.id.action_close) {
+            System.exit(0);
             return true;
         }
 

@@ -73,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
             String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
             return true;
+
+        } else if (id == R.id.action_close) {
+            System.exit(0);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

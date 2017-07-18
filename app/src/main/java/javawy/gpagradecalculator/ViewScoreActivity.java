@@ -25,7 +25,11 @@ public class ViewScoreActivity extends AppCompatActivity {
     /*
      * Fields
      */
+
+    /** Ad View */
     private AdView mAdView;
+
+    /** Interstitial Ad */
     private InterstitialAd mInterstitialAd;
 
     /*
@@ -50,7 +54,8 @@ public class ViewScoreActivity extends AppCompatActivity {
         currentScoreValue.setText(intent.getStringExtra("currentAverage"));
 
         TextView ratingValue = (TextView) findViewById(R.id.ratingValue);
-        String rating = getRating(Double.valueOf(intent.getStringExtra("finalAverage")));
+
+        String rating = getRating(intent.getStringExtra("finalAverage"));
         ratingValue.setText(rating);
 
         TextView totalHoursValue = (TextView) findViewById(R.id.totalHoursValue);
@@ -90,14 +95,18 @@ public class ViewScoreActivity extends AppCompatActivity {
      * Show Interstitial Ad
      */
     private void showInterstitialAd() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
+        try {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
+                    }
                 }
-            }
-        }, 2000);
+            }, 2000);
+        } catch(Exception e) {
+            // Nothing..
+        }
     }
 
     /**
@@ -106,21 +115,25 @@ public class ViewScoreActivity extends AppCompatActivity {
      * @param value
      * @return Rating
      */
-    private String getRating(Double value) {
+    private String getRating(String value) {
         String rating = null;
+        try {
+            Double ratingDouble = Double.valueOf(value);
 
-        if(value >= 3.5) {
-            rating = "ممتاز";
-        } else if(value >= 3.0) {
-            rating = "جيد جداً";
-        } else if(value >= 2.5) {
-            rating = "جيد";
-        } else if(value >= 2.0) {
-            rating = "مقبول";
-        } else {
-            rating = "انذار";
+            if (ratingDouble >= 3.5) {
+                rating = "ممتاز";
+            } else if (ratingDouble >= 3.0) {
+                rating = "جيد جداً";
+            } else if (ratingDouble >= 2.5) {
+                rating = "جيد";
+            } else if (ratingDouble >= 2.0) {
+                rating = "مقبول";
+            } else {
+                rating = "انذار";
+            }
+        } catch (Exception ex) {
+            rating = "";
         }
-
         return rating;
     }
 
@@ -162,22 +175,27 @@ public class ViewScoreActivity extends AppCompatActivity {
      * @return Interstitial Ad
      */
     private void loadInterstitialAd() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-            }
+        try {
+            mInterstitialAd = new InterstitialAd(this);
+            mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                }
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {}
+                @Override
+                public void onAdFailedToLoad(int errorCode) {}
 
-            @Override
-            public void onAdClosed() {}
-        });
-        AdRequest adRequest = new AdRequest.Builder()
-                .setRequestAgent("android_studio:ad_template").build();
-        mInterstitialAd.loadAd(adRequest);
+                @Override
+                public void onAdClosed() {}
+            });
+            AdRequest adRequest = new AdRequest.Builder()
+                    .setRequestAgent("android_studio:ad_template").build();
+            mInterstitialAd.loadAd(adRequest);
+
+        } catch(Exception e) {
+            // Nothing..
+        }
     }
 
     @Override
@@ -208,6 +226,9 @@ public class ViewScoreActivity extends AppCompatActivity {
         } else if (id == R.id.action_rate_this_app) {
             String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
+            return true;
+        } else if (id == R.id.action_close) {
+            System.exit(0);
             return true;
         }
 
