@@ -1,15 +1,11 @@
-package javawy.gpagradecalculator;
+package javawy.newgpagradecalculator;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -61,7 +57,7 @@ public class DeveloperInfoActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.action_rate_this_app) {
-            String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
+            String str ="https://play.google.com/store/apps/details?id=javawy.newgpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
             return true;
         } else if (id == R.id.action_close) {

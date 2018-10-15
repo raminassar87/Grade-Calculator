@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
-        tools:context="javawy.gpagradecalculator.ViewScoreActivity">
+        tools:context=".ViewScoreActivity">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -149,7 +149,6 @@
             <Button android:id="@+id/calculateNewScoreButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="calculateNewScore"
                 android:layout_toLeftOf="@id/backButton"
                 android:text="@string/start_new_score" />
 

@@ -1,4 +1,4 @@
-package javawy.gpagradecalculator;
+package javawy.newgpagradecalculator;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -44,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Open Grade Calculator..
+     *
+     * @param view
+     */
+    public void openGradeCalculator5(View view) {
+        Intent intent = new Intent(this, Marks5Acttivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -70,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.action_rate_this_app) {
-            String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
+            String str ="https://play.google.com/store/apps/details?id=javawy.newgpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
             return true;
 

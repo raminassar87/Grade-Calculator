@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GPAGradeCalculator.iml" filepath="$PROJECT_DIR$/GPAGradeCalculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file:///mnt/B65A02425A01FFBB/rami-data/Rami/Programming/Android/Projects/Grade-Calculator/Grade-Calculator.iml" filepath="/mnt/B65A02425A01FFBB/rami-data/Rami/Programming/Android/Projects/Grade-Calculator/Grade-Calculator.iml" />
+      <module fileurl="file:///mnt/B65A02425A01FFBB/rami-data/Rami/Programming/Android/Projects/Grade-Calculator/app/app.iml" filepath="/mnt/B65A02425A01FFBB/rami-data/Rami/Programming/Android/Projects/Grade-Calculator/app/app.iml" />
     </modules>
   </component>
 </project>

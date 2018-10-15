@@ -1,4 +1,4 @@
-package javawy.gpagradecalculator;
+package javawy.newgpagradecalculator;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,28 +16,27 @@ import android.widget.Spinner;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import javawy.gpagradecalculator.utils.AverageCalculator;
-import javawy.gpagradecalculator.utils.GradeBean;
-import javawy.gpagradecalculator.utils.Utils;
+import javawy.newgpagradecalculator.utils.AverageCalculator;
+import javawy.newgpagradecalculator.utils.GradeBean;
+import javawy.newgpagradecalculator.utils.Utils;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 /**
- * Marks Activity
+ * Marks 5 Activity
  *
  * @author Rami Nassar
  */
-public class MarksActtivity extends AppCompatActivity {
+public class Marks5Acttivity extends AppCompatActivity {
     private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_marks_acttivity);
+        setContentView(R.layout.activity_marks_5_acttivity);
 
         // Disable Old Marks..
         disableMarks();
@@ -498,7 +497,7 @@ public class MarksActtivity extends AppCompatActivity {
         } else {
             Double oldTotalScore = Double.valueOf(oldTotalScoreStr);
             if(oldTotalScore > 4) {
-                alert(getString(R.string.generalErrorTitleMsg), getString(R.string.oldTotalScoreErrorMsg));
+                alert(getString(R.string.generalErrorTitleMsg), getString(R.string.oldTotalScore5ErrorMsg));
                 return false;
             }
         }
@@ -676,7 +675,7 @@ public class MarksActtivity extends AppCompatActivity {
      */
     private void alert(String title,String message) {
 
-        AlertDialog alertDialog = new AlertDialog.Builder(MarksActtivity.this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(Marks5Acttivity.this).create();
         alertDialog.setTitle(title);
         alertDialog.setMessage(message);
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "موافق",
@@ -739,6 +738,7 @@ public class MarksActtivity extends AppCompatActivity {
             intent.putExtra("finalHoursSum", finalHoursSum.toString());
             intent.putExtra("finalAverageSum", finalAverageSum.toString());
             intent.putExtra("finalAverage", formatter.format(finalAverage));
+            intent.putExtra("calculationMode", "5");
 
             startActivity(intent);
 
@@ -773,7 +773,7 @@ public class MarksActtivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.action_rate_this_app) {
-            String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
+            String str ="https://play.google.com/store/apps/details?id=javawy.newgpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
             return true;
         } else if (id == R.id.action_close) {

@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="/mnt/B65A02425A01FFBB/rami-data/Rami/Programming/Android/Projects/Grade-Calculator" />
+            <option value="/mnt/B65A02425A01FFBB/rami-data/Rami/Programming/Android/Projects/Grade-Calculator/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

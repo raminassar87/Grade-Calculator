@@ -1,4 +1,4 @@
-package javawy.gpagradecalculator;
+package javawy.newgpagradecalculator;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -64,6 +64,8 @@ public class ViewScoreActivity extends AppCompatActivity {
         TextView totalGradeValue = (TextView) findViewById(R.id.totalGradeValue);
         totalGradeValue.setText(intent.getStringExtra("finalAverage"));
 
+        final String calculationMode = intent.getStringExtra("calculationMode");
+
         final StringBuffer shareTextObj = new StringBuffer("");
         shareTextObj.append(getString(R.string.share_header)).append("\n");
         shareTextObj.append(getString(R.string.current_hours)).append(" ").append(intent.getStringExtra("currentHoursSum")).append("\n");
@@ -77,6 +79,19 @@ public class ViewScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 shareResult(shareTextObj.toString());
+            }
+        });
+
+        Button calculateNewScoreButton = (Button)findViewById(R.id.calculateNewScoreButton);
+        calculateNewScoreButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = null;
+                if(calculationMode.equals("5")) {
+                    intent = new Intent(ViewScoreActivity.this, Marks5Acttivity.class);
+                } else {
+                    intent = new Intent(ViewScoreActivity.this, MarksActtivity.class);
+                }
+                startActivity(intent);
             }
         });
 
@@ -143,8 +158,10 @@ public class ViewScoreActivity extends AppCompatActivity {
      * @param view : View
      */
     public void calculateNewScore(View view) {
+        /*
         Intent intent = new Intent(this, MarksActtivity.class);
         startActivity(intent);
+        */
     }
 
     /**
@@ -224,7 +241,7 @@ public class ViewScoreActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.action_rate_this_app) {
-            String str ="https://play.google.com/store/apps/details?id=javawy.gpagradecalculator";
+            String str ="https://play.google.com/store/apps/details?id=javawy.newgpagradecalculator";
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
             return true;
         } else if (id == R.id.action_close) {

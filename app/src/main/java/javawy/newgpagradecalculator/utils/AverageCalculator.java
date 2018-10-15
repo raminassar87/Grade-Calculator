@@ -1,16 +1,11 @@
-package javawy.gpagradecalculator.utils;
+package javawy.newgpagradecalculator.utils;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class AverageCalculator {
-
+/*
     public static void main(String[] args) {
         List<GradeBean> grades = new ArrayList<GradeBean>();
 
@@ -45,6 +40,7 @@ public class AverageCalculator {
         System.out.println("الساعات الداخلة في حساب المعدل التراكمي : " + finalHoursSum);
         System.out.println("المعدل التراكمي المتوقع: " + formatter.format(finalAverage));
     }
+*/
 
     /**
      * Calculate Average

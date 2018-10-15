@@ -5,7 +5,7 @@
     android:layoutDirection="rtl"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".MarksActtivity" >
+    tools:context=".Marks5Acttivity" >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true"
-        tools:context=".MarksActtivity"
+        tools:context=".Marks5Acttivity"
         android:orientation="vertical">
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists1"
                     android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours1"
                     android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists2"
                     android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours2"
                     android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists3"
                     android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours3"
                     android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists4"
                     android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours4"
                     android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists5"
                     android:layout_width="wrap_content"
@@ -180,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours5"
                     android:layout_height="wrap_content"
@@ -194,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists6"
                     android:layout_width="wrap_content"
@@ -207,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours6"
                     android:layout_height="wrap_content"
@@ -221,7 +221,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
 
                 <CheckBox android:id="@+id/oldMarkExists7"
                     android:layout_width="wrap_content"
@@ -234,7 +234,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_gravity="right"
-                    android:entries="@array/mark_values" />
+                    android:entries="@array/mark_5_values" />
                 <Spinner
                     android:id="@+id/noOfHours7"
                     android:layout_height="wrap_content"
@@ -315,7 +315,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="calculateScore"
-            android:text="@string/start" />
+            android:text="@string/start_5" />
 
         <TextView
             android:layout_weight="1"

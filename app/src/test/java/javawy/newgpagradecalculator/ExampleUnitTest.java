@@ -1,4 +1,4 @@
-package javawy.gpagradecalculator;
+package javawy.newgpagradecalculator;
 
 import org.junit.Test;
 

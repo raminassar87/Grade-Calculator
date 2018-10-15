@@ -1,4 +1,4 @@
-package javawy.gpagradecalculator.utils;
+package javawy.newgpagradecalculator.utils;
 
 /**
  * Created by Rami Nassar on 7/4/2017.
